@@ -1,4 +1,4 @@
-package com.br.caminholivre.Util;
+package com.br.caminholivre.Service;
 
 import android.app.ProgressDialog;
 import android.content.Context;
