@@ -1,6 +1,7 @@
 package com.br.caminholivre.Fragments;
 
 
+import android.app.ProgressDialog;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -18,6 +19,7 @@ import android.widget.Toast;
 
 import com.br.caminholivre.Model.OnePlace;
 import com.br.caminholivre.R;
+import com.br.caminholivre.Util.FeedTask;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.PendingResult;
@@ -39,14 +41,10 @@ public class HomeFragment extends Fragment implements GoogleApiClient.OnConnecti
     private GoogleApiClient mGoogleApiClient;
     private static final int PERMISSION_REQUEST_CODE = 100;
     private ListView lista_de_locais;
-    private List<String> locais = new ArrayList<String>();
-
-
 
     public HomeFragment() {
         // Required empty public constructor
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) throws SecurityException{
@@ -57,33 +55,11 @@ public class HomeFragment extends Fragment implements GoogleApiClient.OnConnecti
                 .addConnectionCallbacks(this)
                 .addOnConnectionFailedListener(this)
                 .build();
-
+        mGoogleApiClient.connect();
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         verificarPermissao();
-
         lista_de_locais = (ListView) view.findViewById(R.id.places_list);
-        PendingResult<PlaceLikelihoodBuffer> result = Places.PlaceDetectionApi.getCurrentPlace(mGoogleApiClient, null);
-        result.setResultCallback(new ResultCallback<PlaceLikelihoodBuffer>() {
-            @Override
-            public void onResult(PlaceLikelihoodBuffer likelyPlaces) {
-                //List<OnePlace> locais = new ArrayList<OnePlace>();
-                for (PlaceLikelihood placeLikelihood : likelyPlaces) {
 
-                    OnePlace place = new OnePlace();
-                    place.setId(placeLikelihood.getPlace().getId());
-                    place.setEndereco(placeLikelihood.getPlace().getAddress().toString());
-                    place.setNome(placeLikelihood.getPlace().getName().toString());
-
-                    locais.add(placeLikelihood.getPlace().getName().toString());
-                    //System.out.println(locais);
-                    //locais.add(place);
-                    System.out.println(place.getNome());
-                }
-                likelyPlaces.release();
-                ArrayAdapter<String> places = new ArrayAdapter<>(getContext(), android.R.layout.simple_list_item_1, locais);
-                lista_de_locais.setAdapter(places);
-            }
-        });
         // Inflate the layout for this fragment
         return view;
     }
@@ -92,7 +68,9 @@ public class HomeFragment extends Fragment implements GoogleApiClient.OnConnecti
     @Override
     public void onStart() {
         super.onStart();
-        mGoogleApiClient.connect();
+        if(mGoogleApiClient.isConnected() == false){
+            mGoogleApiClient.connect();
+        }
     }
 
     @Override
@@ -103,7 +81,9 @@ public class HomeFragment extends Fragment implements GoogleApiClient.OnConnecti
 
     @Override
     public void onResume() throws SecurityException{
-                super.onResume();
+        FeedTask f = new FeedTask(getContext(), mGoogleApiClient,lista_de_locais);
+        f.execute();
+        super.onResume();
     }
 
     @Override

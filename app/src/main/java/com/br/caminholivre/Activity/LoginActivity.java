@@ -1,5 +1,6 @@
 package com.br.caminholivre.Activity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.support.annotation.NonNull;
@@ -42,14 +43,16 @@ public class LoginActivity extends AppCompatActivity {
     EditText login;
     EditText password;
     Button logar;
+    private ProgressDialog progress;
 
-
+    private static final int PERMISSION_REQUEST_CODE = 100;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        verificarPermissao();
 
         FacebookSdk.getApplicationContext();
 
@@ -67,11 +70,16 @@ public class LoginActivity extends AppCompatActivity {
         logar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 String usuario = login.getText().toString();
                 String senha = password.getText().toString();
 
                 verificarLogin(usuario, senha);
+                progress = new ProgressDialog(LoginActivity.this);
+                progress.setMessage("Carregando...");
+                progress.show();
             }
+
         });
 
         loginButton = (LoginButton) findViewById(R.id.fb_login_bt);
@@ -105,6 +113,7 @@ public class LoginActivity extends AppCompatActivity {
                 if ( e == null ){ // sucesso
                     Toast.makeText(LoginActivity.this, "Login realizado com sucesso!", Toast.LENGTH_SHORT).show();
                     abrirAreaPrincipal();
+                    progress.dismiss();
                 }else { // erro
                     ParseErros parseErros = new ParseErros();
                     String erro = parseErros.getErro(e.getCode());
@@ -138,6 +147,17 @@ public class LoginActivity extends AppCompatActivity {
         Intent intent = new Intent(LoginActivity.this, FeedPrincipalActivity.class);
         startActivity(intent);
         finish();
+    }
+
+    public void verificarPermissao(){
+        if (ContextCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION)
+                != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this,
+                    new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION},
+                    PERMISSION_REQUEST_CODE);
+        }else{
+            System.out.println("verificarPermissao: Tudo ok");
+        }
     }
 
 }
