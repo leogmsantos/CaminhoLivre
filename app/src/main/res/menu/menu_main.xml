@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+    <item android:id="@+id/action_configuracoes"
+        android:title="@string/action_configuracoes"
+        android:icon="@drawable/ic_action_settings"
+        android:orderInCategory="100"
+        app:showAsAction="ifRoom" />
+
+    <item android:id="@+id/action_sair"
+        android:title="@string/action_sair"
+        android:icon="@drawable/ic_close"
+        android:orderInCategory="200"
+        app:showAsAction="ifRoom" />
+
+</menu>

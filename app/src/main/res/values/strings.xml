@@ -1,0 +1,14 @@
+<resources>
+    <string name="parse_app_id">o4cj9mXmx36wzFdKVzrfRM7tG2psbv2YPDZqdo94</string>
+    <string name="parse_client_key">TJGdLMAtl8cDCApOsQ6SMIUWTMIzMaO5SIWMj19o</string>
+    <string name="places_api_key">AIzaSyDAHiDymip-M0QL7sP3JK3wjwmD2HAUhOg</string>
+
+    <string name="app_name"></string>
+    <string name="facebook_app_id">1339353946153587</string>
+
+    <string name="action_configuracoes">Configurações</string>
+    <string name="action_sair">Sair</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
