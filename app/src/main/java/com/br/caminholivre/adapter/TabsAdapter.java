@@ -1,12 +1,12 @@
-package com.br.caminholivre.Adapter;
+package com.br.caminholivre.adapter;
 
 import android.content.Context;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
-import com.br.caminholivre.Fragments.HomeFragment;
-import com.br.caminholivre.Fragments.RotasFragment;
+import com.br.caminholivre.fragments.HomeFragment;
+import com.br.caminholivre.fragments.RotasFragment;
 
 /**
  * Created by Leonardo on 10/03/2017.

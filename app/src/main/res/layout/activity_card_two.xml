@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#3FC380"
+    tools:context="com.br.caminholivre.avaliacao.CardTwo">
+
+
+    <TextView
+        android:id="@+id/tvVaga"
+        android:textAlignment="center"
+        android:textSize="22dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:text="Tem vaga para deficiente e/ou manobrista?" />
+
+    <RadioGroup
+        android:id="@+id/rgVaga"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvVaga"
+        android:orientation="horizontal"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="22dp" >
+
+        <RadioButton
+            android:id="@+id/rbtnTemVaga"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Sim" />
+
+        <RadioButton
+            android:id="@+id/rbtnNaoTemVaga"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Não" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/tvAcessoPersonalizado"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rgVaga"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="34dp"
+        android:textAlignment="center"
+        android:textSize="22dp"
+        android:text="Existe acesso personalizado para pessoas com dificuldade de locomoção?" />
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:id="@+id/radioGroup4">
+
+        <RadioButton
+            android:id="@+id/rbtnTemAcessoPersonalizado"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Sim" />
+
+        <RadioButton
+            android:id="@+id/rbtnNaoTemAcessoPersonalizado"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Não" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/tvBalcao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/radioGroup4"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="31dp"
+        android:textAlignment="center"
+        android:textSize="22dp"
+        android:text="Possui balcão/mesa em altura adequada para cadeirantes?" />
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvBalcao"
+        android:orientation="horizontal"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="18dp"
+        android:id="@+id/radioGroup6">
+
+        <RadioButton
+            android:id="@+id/rbtnTemBalcao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Sim" />
+
+        <RadioButton
+            android:id="@+id/rbtnnaoTemBalcao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Não" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btn_ir_proxima"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/radioGroup6"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/seta"/>
+</RelativeLayout>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_place_form_activty"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="0dp"
+    android:orientation="vertical"
+    android:background="@drawable/fundo_degrade_dois"
+    tools:context="com.br.caminholivre.activity.PlaceFormActivty">
+
+            <ImageView
+                android:layout_width="385dp"
+                android:layout_height="330dp"
+                android:layout_marginTop="-62dp"
+                android:id="@+id/tv_place_photo" />
+
+            <com.melnykov.fab.FloatingActionButton
+                android:id="@+id/btn_avaliar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|right"
+                android:layout_marginTop="-88dp"
+                android:src="@drawable/avaliar" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:textSize="20dp"
+                    android:textAlignment="center"
+                    android:id="@+id/tv_place_nome" />
+
+                <TextView
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="15dp"
+                    android:textAlignment="center"
+                    android:id="@+id/tv_place_endereco" />
+
+                <TextView
+                    android:layout_marginTop="10dp"
+                    android:textColor="#2980b9"
+                    android:id="@+id/tv_status_form"
+                    android:textAlignment="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/tv_complemento"
+                    android:textColor="#2980b9"
+                    android:textAlignment="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/tv_complemento_dois"
+                    android:textColor="#2980b9"
+                    android:textAlignment="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/tv_score"
+                    android:textAlignment="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+</LinearLayout>

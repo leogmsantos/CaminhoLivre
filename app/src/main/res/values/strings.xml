@@ -1,9 +1,9 @@
 <resources>
     <string name="parse_app_id">o4cj9mXmx36wzFdKVzrfRM7tG2psbv2YPDZqdo94</string>
     <string name="parse_client_key">TJGdLMAtl8cDCApOsQ6SMIUWTMIzMaO5SIWMj19o</string>
-    <string name="places_api_key">AIzaSyDAHiDymip-M0QL7sP3JK3wjwmD2HAUhOg</string>
+    <string name="places_api_key">AIzaSyAb99RN_5YQ2IUstoMnx76PMw9jY99OvZc</string>
 
-    <string name="app_name"></string>
+    <string name="app_name">Caminho Livre</string>
     <string name="facebook_app_id">1339353946153587</string>
 
     <string name="action_configuracoes">Configurações</string>

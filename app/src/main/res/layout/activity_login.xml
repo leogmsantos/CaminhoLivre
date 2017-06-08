@@ -11,7 +11,7 @@
     android:paddingTop="16dp"
     android:background="@drawable/fundo_degrade"
     android:gravity="center_vertical|center_horizontal"
-    tools:context="com.br.caminholivre.Activity.LoginActivity">
+    tools:context="com.br.caminholivre.activity.LoginActivity">
 
         <ImageView
             android:layout_width="400dp"

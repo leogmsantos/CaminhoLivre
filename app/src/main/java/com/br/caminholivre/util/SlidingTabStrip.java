@@ -1,4 +1,4 @@
-package com.br.caminholivre.Util;
+package com.br.caminholivre.util;
 
 /**
  * Created by Leonardo on 10/03/2017.

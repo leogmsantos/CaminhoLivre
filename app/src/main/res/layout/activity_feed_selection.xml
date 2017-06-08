@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fundo_degrade_dois"
+    tools:context="com.br.caminholivre.activity.FeedSelectionActivity">
+
+
+    <ImageView
+        android:id="@+id/img_restaurantes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="51dp"
+        android:layout_marginTop="142dp"
+        app:srcCompat="@drawable/restaurantes"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+    <ImageView
+        android:id="@+id/img_hospedagem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/hospedagem"
+        android:layout_alignTop="@+id/img_restaurantes"
+        android:layout_toEndOf="@+id/img_restaurantes" />
+
+    <ImageView
+        android:id="@+id/img_diversao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/diversao"
+        android:layout_below="@+id/img_restaurantes"
+        android:layout_alignStart="@+id/img_restaurantes" />
+
+    <ImageView
+        android:id="@+id/img_saude"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/saude"
+        android:layout_below="@+id/img_hospedagem"
+        android:layout_toEndOf="@+id/img_restaurantes" />
+
+    <TextView
+        android:id="@+id/btn_procurar_place"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="ENCONTRE UM LUGAR"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Ou selecione um abaixo"
+        android:layout_below="@+id/btn_procurar_place"
+        android:layout_alignEnd="@+id/btn_procurar_place" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/places_ic_search"
+        android:layout_above="@+id/textView3"
+        android:layout_toStartOf="@+id/btn_procurar_place" />
+</RelativeLayout>

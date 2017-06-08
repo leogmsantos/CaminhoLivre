@@ -1,4 +1,4 @@
-package com.br.caminholivre.Activity;
+package com.br.caminholivre.activity;
 
 
 import android.os.Bundle;

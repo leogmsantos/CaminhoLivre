@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.br.caminholivre.Activity.FeedPrincipalActivity">
+    tools:context="com.br.caminholivre.activity.FeedPrincipalActivity">
 
     <include
         android:id="@+id/toolbar_principal"
@@ -17,7 +17,7 @@
         android:layout_height="0dp"
         android:layout_weight="1"/>
 
-    <com.br.caminholivre.Util.SlidingTabLayout
+    <com.br.caminholivre.util.SlidingTabLayout
         android:id="@+id/sliding_tab_feed"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

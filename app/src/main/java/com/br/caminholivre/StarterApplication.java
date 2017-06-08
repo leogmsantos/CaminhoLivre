@@ -3,6 +3,7 @@ package com.br.caminholivre;
 import android.app.Application;
 import android.util.Log;
 
+import com.br.caminholivre.model.ParsePlace;
 import com.parse.Parse;
 import com.parse.ParseACL;
 import com.parse.ParseException;

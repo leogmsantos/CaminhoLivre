@@ -1,4 +1,4 @@
-package com.br.caminholivre.Fragments;
+package com.br.caminholivre.fragments;
 
 
 import android.os.Bundle;

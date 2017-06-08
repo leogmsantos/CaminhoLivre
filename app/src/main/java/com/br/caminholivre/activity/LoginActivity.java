@@ -1,15 +1,13 @@
-package com.br.caminholivre.Activity;
+package com.br.caminholivre.activity;
 
+import android.Manifest;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -17,20 +15,14 @@ import android.widget.Toast;
 
 
 import com.br.caminholivre.R;
-import com.br.caminholivre.Util.ParseErros;
+import com.br.caminholivre.util.ParseErros;
+import com.facebook.AccessToken;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
 import com.facebook.FacebookSdk;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
-import com.google.android.gms.common.ConnectionResult;
-import com.google.android.gms.common.api.GoogleApiClient;
-import com.google.android.gms.common.api.PendingResult;
-import com.google.android.gms.common.api.ResultCallback;
-import com.google.android.gms.location.places.PlaceLikelihood;
-import com.google.android.gms.location.places.PlaceLikelihoodBuffer;
-import com.google.android.gms.location.places.Places;
 import com.parse.LogInCallback;
 import com.parse.ParseException;
 import com.parse.ParseUser;
@@ -88,7 +80,8 @@ public class LoginActivity extends AppCompatActivity {
         loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
             @Override
             public void onSuccess(LoginResult loginResult) {
-                startActivity(new Intent(LoginActivity.this, FeedPrincipalActivity.class));
+                //startActivity(new Intent(LoginActivity.this, FeedPrincipalActivity.class));
+                startActivity(new Intent(LoginActivity.this, FeedSelectionActivity.class));
                 System.out.println("On Sucess");
             }
 
@@ -117,7 +110,7 @@ public class LoginActivity extends AppCompatActivity {
                 }else { // erro
                     ParseErros parseErros = new ParseErros();
                     String erro = parseErros.getErro(e.getCode());
-                    Toast.makeText(LoginActivity.this, erro, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this, erro + " " + e.getMessage(), Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -144,7 +137,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void abrirAreaPrincipal(){
-        Intent intent = new Intent(LoginActivity.this, FeedPrincipalActivity.class);
+        Intent intent = new Intent(LoginActivity.this, FeedSelectionActivity.class);
         startActivity(intent);
         finish();
     }
@@ -155,9 +148,24 @@ public class LoginActivity extends AppCompatActivity {
             ActivityCompat.requestPermissions(this,
                     new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION},
                     PERMISSION_REQUEST_CODE);
+        }if(ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_NETWORK_STATE)
+                != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this,
+                    new String[]{Manifest.permission.ACCESS_NETWORK_STATE},
+                    PERMISSION_REQUEST_CODE);
+
+        }if(ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_LOCATION_EXTRA_COMMANDS)
+                != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this,
+                    new String[]{android.Manifest.permission.ACCESS_LOCATION_EXTRA_COMMANDS},
+                    PERMISSION_REQUEST_CODE);
+        }if(ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_WIFI_STATE)
+                != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this,
+                    new String[]{Manifest.permission.ACCESS_WIFI_STATE},
+                    PERMISSION_REQUEST_CODE);
         }else{
             System.out.println("verificarPermissao: Tudo ok");
         }
     }
-
 }

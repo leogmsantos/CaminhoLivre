@@ -2,12 +2,14 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.br.caminholivre">
 
-    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
 
     <application
-        android:debuggable="true"
         android:name=".StarterApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -24,7 +26,7 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/places_api_key" />
 
-        <activity android:name=".Activity.LoginActivity">
+        <activity android:name=".activity.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -36,9 +38,14 @@
             android:name="com.facebook.sdk.ApplicationId"
             android:value="@string/facebook_app_id" />
 
-        <activity android:name=".Activity.MainActivity" />
-        <activity android:name=".Activity.FeedPrincipalActivity" />
-        <activity android:name=".Activity.CadastroActivity" />
+        <activity android:name="activity.MainActivity" />
+        <activity android:name=".activity.FeedPrincipalActivity" />
+        <activity android:name=".activity.CadastroActivity" />
+        <activity android:name=".activity.PlaceFormActivty" />
+        <activity android:name=".activity.FeedSelectionActivity" />
+        <activity android:name=".avaliacao.CardOne" />
+        <activity android:name=".avaliacao.CardTwo" />
+        <activity android:name=".avaliacao.CardThree"></activity>
     </application>
 
 </manifest>

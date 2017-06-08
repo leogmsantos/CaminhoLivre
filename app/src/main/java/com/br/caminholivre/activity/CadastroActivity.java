@@ -1,4 +1,4 @@
-package com.br.caminholivre.Activity;
+package com.br.caminholivre.activity;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -10,7 +10,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.br.caminholivre.R;
-import com.br.caminholivre.Util.ParseErros;
+import com.br.caminholivre.util.ParseErros;
 import com.parse.ParseException;
 import com.parse.ParseUser;
 import com.parse.SignUpCallback;

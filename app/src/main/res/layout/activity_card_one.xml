@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#52B3D9"
+    tools:context="com.br.caminholivre.avaliacao.CardOne">
+
+    <TextView
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Você considera este lugar acessível?"
+        android:textSize="22dp"
+        android:textAlignment="center"
+        android:layout_marginTop="73dp"
+        android:id="@+id/tvVaga"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:id="@+id/btnAvancar"
+        android:background="@drawable/seta"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/radioGroup2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="41dp"
+        />
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/radioGroup2"
+        android:layout_below="@+id/tvVaga"
+        android:layout_alignParentStart="true">
+
+        <RadioButton
+            android:id="@+id/rbtnAcessivel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvVaga"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="64dp"
+            android:layout_weight="1"
+            android:text="Acessível para pessoas com dificuldade de locomoção." />
+
+        <RadioButton
+            android:id="@+id/rbtnParcialmenteAcessivel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/rbtnInacessivel"
+            android:layout_below="@+id/rbtnInacessivel"
+            android:layout_marginTop="25dp"
+            android:layout_weight="1"
+            android:text="Parcialmente acessível para pessoas com dificuldade de locomoção." />
+
+        <RadioButton
+            android:id="@+id/rbtnInacessivel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/rbtnAcessivel"
+            android:layout_below="@+id/rbtnAcessivel"
+            android:layout_marginTop="27dp"
+            android:layout_weight="1"
+            android:text="Não acessível para pessoas com dificuldade de locomoção." />
+    </RadioGroup>
+
+
+</RelativeLayout>

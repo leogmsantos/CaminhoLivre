@@ -1,33 +1,17 @@
-package com.br.caminholivre.Activity;
+package com.br.caminholivre.activity;
 
 import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.support.annotation.NonNull;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
-import android.widget.Toast;
 
-import com.br.caminholivre.Adapter.TabsAdapter;
+import com.br.caminholivre.adapter.TabsAdapter;
 import com.br.caminholivre.R;
-import com.br.caminholivre.Util.SlidingTabLayout;
-import com.google.android.gms.common.ConnectionResult;
-import com.google.android.gms.common.api.GoogleApiClient;
-import com.google.android.gms.common.api.PendingResult;
-import com.google.android.gms.common.api.ResultCallback;
-import com.google.android.gms.location.places.PlaceLikelihood;
-import com.google.android.gms.location.places.PlaceLikelihoodBuffer;
-import com.google.android.gms.location.places.Places;
-import com.parse.Parse;
+import com.br.caminholivre.util.SlidingTabLayout;
 import com.parse.ParseUser;
 
 public class FeedPrincipalActivity extends AppCompatActivity{
@@ -45,6 +29,7 @@ public class FeedPrincipalActivity extends AppCompatActivity{
         toolbarPrincipal = (Toolbar) findViewById(R.id.toolbar_principal);
         toolbarPrincipal.setLogo(R.drawable.logo_toolbar);
         setSupportActionBar(toolbarPrincipal);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
 
         //Configura abas
         slidingTabLayout = (SlidingTabLayout) findViewById(R.id.sliding_tab_feed);
@@ -74,7 +59,6 @@ public class FeedPrincipalActivity extends AppCompatActivity{
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
-
         }
     }
 
